@@ -1,0 +1,9 @@
+{
+	"name": "omocce-engine",
+	"description": "A text-adventure bearlib-based engine",
+	"copyright": "Copyright © 2017, aod",
+	"authors": ["aod"],
+	"dependencies": {
+    "bearlibterminal": "~>1.4.1"
+	}
+}

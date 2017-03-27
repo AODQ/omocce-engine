@@ -21,7 +21,7 @@ public:
   }
 
   WindowInfo RWindow_Info() const { return info; }
-  OMOutString Format_String(inout OMString, inout WindowInfo, ref int);
+  OMOutString Format_String(inout OMString, inout WindowInfo, ref int) inout;
 }
 
 class OutputLogWindow : Window {
@@ -30,12 +30,12 @@ public:
     super(info_);
   }
   override OMOutString Format_String(inout OMString str, inout WindowInfo info,
-                                     ref int it) const in {
+                                     ref int it) inout in {
     assert(start <= end);
     assert(str.length > 0);
     assert(it >= 0 && it < str.length);
   }  body  {
-    return OMString(str[0 .. $]);
+    return OMOutString(str[0 .. $].dup);
   }
 
 }
